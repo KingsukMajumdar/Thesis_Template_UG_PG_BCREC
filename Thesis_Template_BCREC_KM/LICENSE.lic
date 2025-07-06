@@ -1,0 +1,83 @@
+MIT License
+
+Copyright (c) 2025 Kingsuk Majumdar
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+================================================================================
+
+UG Thesis LaTeX Template for Dr. B. C. Roy Engineering College
+Version: 3.0
+Created: July 2025
+Author: Kingsuk Majumdar
+
+This template includes:
+- ugthesis.cls: Main LaTeX class file for undergraduate thesis formatting
+- Frontmatter templates: Declaration, Certificate, Abstract, Acknowledgment
+- Backmatter templates: Author biographies, abbreviations list
+- Sample chapter templates and bibliography setup
+- Automated formatting for student information, supervisors, and college details
+
+Features:
+- Professional A4 formatting optimized for academic thesis
+- Support for up to 5 students with automatic conditional rendering
+- Integrated photo handling for author biographies
+- Customizable headers, footers, and title pages
+- Background logo support for certificate pages
+- Justified text without hyphenation
+- MATLAB code highlighting support via mcode.sty
+- Comprehensive error handling and wrapper commands
+
+Usage:
+1. Modify main.tex with your thesis details
+2. Update student, supervisor, and college information
+3. Add your content to chapter files
+4. Compile with pdflatex
+
+For support and updates, contact: [Your Email/GitHub]
+
+This template is provided under the MIT License to encourage open academic
+collaboration and to help students create professional thesis documents.
+
+================================================================================
+
+THIRD-PARTY COMPONENTS AND ATTRIBUTIONS:
+
+This template includes or depends on the following third-party components:
+
+1. mcode.sty - MATLAB Code Highlighting Package
+   Copyright (c) 2009, Florian Knorn
+   License: BSD License
+   Source: https://www.mathworks.com/matlabcentral/fileexchange/8015-m-code-latex-package
+   
+   This package provides syntax highlighting for MATLAB code in LaTeX documents.
+   It is included under its original BSD license terms.
+
+2. Standard LaTeX Packages
+   Various standard LaTeX packages are used (graphicx, amsmath, hyperref, etc.)
+   These are part of standard LaTeX distributions and have their own licenses.
+
+All third-party components retain their original licenses and copyright notices.
+Users should ensure compliance with all applicable licenses when using this template.
+
+================================================================================
+
+Note: While this template is freely available, please ensure that any thesis
+created using this template complies with your institution's academic
+requirements and formatting guidelines.

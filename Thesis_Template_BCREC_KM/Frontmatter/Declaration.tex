@@ -1,0 +1,65 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title: Declaration Page
+% Purpose: Declaration page for UG thesis
+% Compiler: pdflatex
+% OS: Manjaro 
+% Version: V3
+% Written on: July 05, 2025
+% Revision Date: July 05, 2025
+% Author: Kingsuk Majumdar
+% Copyright (c) 2025 Kingsuk Majumdar
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Put this file in Frontmatter/ directory as Declaration.tex
+
+\thispagestyle{empty}
+\vspace*{-0.5cm}
+
+% Header with logo and college info
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}m{3cm}@{\hspace{1cm}}m{12cm}@{}}
+%\IfFileExists{college_logo.png}{\includegraphics[width=2.5cm,height=2.5cm]{college_logo.png}}{\IfFileExists{college_logo.jpg}{\includegraphics[width=2.5cm,height=2.5cm]{college_logo.jpg}}{\framebox[2.5cm][c]{LOGO}}}
+\includegraphics[width=0.95\linewidth]{college_logo.png} &
+\begin{tabular}{@{}c@{}}  
+\Large{\textbf{\MakeUppercase{\GetCollege}}}\\ 
+\small{\GetAffiliation}\\
+\textbf{\GetDepartment}\\
+\textbf{\GetAddress}
+\end{tabular}
+\end{tabular}
+\end{table}
+
+\vspace{-1.0cm}
+\noindent\rule{\textwidth}{2pt}
+\vspace{-1.4cm}
+
+\begin{center}
+\textbf{\large \MakeUppercase{Declaration}}
+\end{center}
+
+\vspace{0.1cm}
+
+We, the undersigned, hereby declare that the work presented in this project report entitled 
+``\textbf{\GetThesisTitle}'' is the result of our own investigation carried out under the supervision of 
+\textbf{\GetSupervisor}%
+\ifnum\GetHasCoSupervisor>1\relax\ and \textbf{\GetCoSupervisor}\fi\ 
+at \GetCollege, \GetLocation.
+
+\vspace{0.1cm}
+
+We further declare that this work has not been submitted to any other university or institution 
+for the award of any degree or diploma. All the references used have been duly acknowledged.
+
+\vspace{0.1cm}
+
+We certify that the work embodied in this project work has been done by us and that all material 
+from other sources have been properly and fully acknowledged.
+
+\vspace{0.1cm}
+
+\begin{center}
+\GenerateSignatureList
+\end{center}
+
+\cleardoublepage
