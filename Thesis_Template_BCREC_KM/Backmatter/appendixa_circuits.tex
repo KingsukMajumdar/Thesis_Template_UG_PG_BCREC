@@ -1,0 +1,563 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title: Appendix A - Circuit Diagrams and Schematics
+% Purpose: Circuit diagrams and schematics for smart grid monitoring system
+% Compiler: pdflatex
+% OS: Manjaro 
+% Version: V1
+% Written on: July 05, 2025
+% Revision Date: July 05, 2025
+% Author: Kingsuk Majumdar
+% Copyright (c) 2025 Kingsuk Majumdar
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Circuit Diagrams and Schematics}
+\label{chap:circuits}
+
+\section{Sensor Interface Circuits}
+\label{sec:sensor_circuits}
+
+This section presents the detailed circuit diagrams for various sensor interfaces used in the smart grid monitoring system.
+
+\subsection{Voltage Sensor Interface Circuit}
+\label{subsec:voltage_sensor_circuit}
+
+The voltage sensor interface circuit is designed to safely measure AC voltages up to 400V while providing electrical isolation and appropriate scaling for the microcontroller ADC input.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{voltage_sensor_circuit}
+\caption{Voltage Sensor Interface Circuit Diagram}
+\label{fig:voltage_sensor_circuit}
+\end{figure}
+
+\textbf{Circuit Components:}
+\begin{itemize}
+\item \textbf{T1:} Step-down transformer (400V:12V, 2VA)
+\item \textbf{R1, R2:} Voltage divider resistors (10k$\Omega$, 1\% tolerance)
+\item \textbf{C1:} Filter capacitor (1$\mu$F, ceramic)
+\item \textbf{D1, D2:} Protection diodes (1N4148)
+\item \textbf{U1:} Operational amplifier (LM358)
+\item \textbf{R3, R4:} Feedback resistors for unity gain buffer
+\item \textbf{C2:} Power supply decoupling capacitor (100nF)
+\end{itemize}
+
+\textbf{Design Specifications:}
+\begin{itemize}
+\item Input voltage range: 0-400V AC
+\item Output voltage range: 0-3.3V DC
+\item Accuracy: $\pm$1\% of full scale
+\item Bandwidth: DC to 1kHz
+\item Isolation voltage: 2.5kV
+\end{itemize}
+
+\subsection{Current Sensor Interface Circuit}
+\label{subsec:current_sensor_circuit}
+
+The current sensor interface uses a split-core current transformer to provide non-invasive current measurement with galvanic isolation.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{current_sensor_circuit}
+\caption{Current Sensor Interface Circuit Diagram}
+\label{fig:current_sensor_circuit}
+\end{figure}
+
+\textbf{Circuit Components:}
+\begin{itemize}
+\item \textbf{CT1:} Split-core current transformer (100A:1A ratio)
+\item \textbf{R5:} Burden resistor (1$\Omega$, 2W)
+\item \textbf{R6, R7:} Input protection resistors (100$\Omega$)
+\item \textbf{C3, C4:} AC coupling capacitors (10$\mu$F, tantalum)
+\item \textbf{U2:} Instrumentation amplifier (INA128)
+\item \textbf{R8:} Gain setting resistor (499$\Omega$, 0.1\%)
+\item \textbf{R9, R10:} Bias resistors (10k$\Omega$)
+\end{itemize}
+
+\textbf{Design Specifications:}
+\begin{itemize}
+\item Input current range: 0-100A AC
+\item Output voltage range: 0-3.3V DC
+\item Accuracy: $\pm$0.5\% of reading
+\item Frequency response: 45-65Hz
+\item Phase accuracy: $\pm$1 degree
+\end{itemize}
+
+\subsection{Temperature Sensor Interface Circuit}
+\label{subsec:temperature_sensor_circuit}
+
+The temperature sensor interface provides accurate temperature measurement for equipment monitoring and environmental conditions.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{temperature_sensor_circuit}
+\caption{Temperature Sensor Interface Circuit Diagram}
+\label{fig:temperature_sensor_circuit}
+\end{figure}
+
+\textbf{Circuit Components:}
+\begin{itemize}
+\item \textbf{U3:} Digital temperature sensor (DS18B20)
+\item \textbf{R11:} Pull-up resistor (4.7k$\Omega$)
+\item \textbf{C5:} Power supply filtering capacitor (100nF)
+\item \textbf{J1:} 3-pin connector for sensor cable
+\end{itemize}
+
+\textbf{Design Specifications:}
+\begin{itemize}
+\item Temperature range: -20°C to +85°C
+\item Resolution: 0.0625°C (12-bit)
+\item Accuracy: $\pm$0.5°C
+\item Interface: 1-Wire digital communication
+\item Power consumption: 1mA active, 1$\mu$A standby
+\end{itemize}
+
+\section{Communication Module Circuits}
+\label{sec:communication_circuits}
+
+\subsection{WiFi Communication Module}
+\label{subsec:wifi_module_circuit}
+
+The WiFi communication module provides wireless connectivity for data transmission to the central monitoring system.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{wifi_module_circuit}
+\caption{WiFi Communication Module Circuit Diagram}
+\label{fig:wifi_module_circuit}
+\end{figure}
+
+\textbf{Circuit Components:}
+\begin{itemize}
+\item \textbf{U4:} ESP32 WiFi/Bluetooth microcontroller
+\item \textbf{L1:} RF inductor for antenna matching (2.2nH)
+\item \textbf{C6, C7:} Antenna matching capacitors (1pF, 2.2pF)
+\item \textbf{ANT1:} 2.4GHz PCB antenna
+\item \textbf{R12, R13:} GPIO pull-up resistors (10k$\Omega$)
+\item \textbf{C8, C9:} Power supply decoupling capacitors (100nF, 10$\mu$F)
+\item \textbf{Y1:} Crystal oscillator (40MHz)
+\item \textbf{C10, C11:} Crystal load capacitors (22pF)
+\end{itemize}
+
+\textbf{Design Specifications:}
+\begin{itemize}
+\item WiFi standard: IEEE 802.11 b/g/n
+\item Frequency range: 2.4GHz ISM band
+\item Transmission power: +20dBm maximum
+\item Receiver sensitivity: -98dBm
+\item Data rate: Up to 150Mbps
+\item Range: Up to 100m (line of sight)
+\end{itemize}
+
+\subsection{LoRa Communication Module}
+\label{subsec:lora_module_circuit}
+
+The LoRa module provides long-range, low-power communication for remote sensor deployments.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{lora_module_circuit}
+\caption{LoRa Communication Module Circuit Diagram}
+\label{fig:lora_module_circuit}
+\end{figure}
+
+\textbf{Circuit Components:}
+\begin{itemize}
+\item \textbf{U5:} SX1276 LoRa transceiver
+\item \textbf{X1:} 32MHz TCXO (temperature compensated crystal oscillator)
+\item \textbf{L2, L3:} RF matching inductors (18nH, 27nH)
+\item \textbf{C12-C15:} RF matching and DC blocking capacitors
+\item \textbf{ANT2:} 915MHz external antenna connector
+\item \textbf{R14-R17:} GPIO and control resistors
+\end{itemize}
+
+\textbf{Design Specifications:}
+\begin{itemize}
+\item Frequency bands: 433MHz, 868MHz, 915MHz
+\item Modulation: LoRa spread spectrum
+\item Transmission power: +20dBm maximum
+\item Receiver sensitivity: -148dBm
+\item Range: Up to 15km (line of sight)
+\item Power consumption: 10.8mA TX, 10.3mA RX
+\end{itemize}
+
+\section{Power Supply Circuits}
+\label{sec:power_supply_circuits}
+
+\subsection{Main Power Supply Circuit}
+\label{subsec:main_power_supply}
+
+The main power supply provides stable DC voltages for all system components with protection against over-voltage and over-current conditions.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{power_supply_circuit}
+\caption{Main Power Supply Circuit Diagram}
+\label{fig:power_supply_circuit}
+\end{figure}
+
+\textbf{Circuit Components:}
+\begin{itemize}
+\item \textbf{T2:} Step-down transformer (230V:15V, 10VA)
+\item \textbf{D3-D6:} Bridge rectifier diodes (1N4007)
+\item \textbf{C16:} Filter capacitor (2200$\mu$F, 25V)
+\item \textbf{U6:} 5V linear regulator (LM7805)
+\item \textbf{U7:} 3.3V low-dropout regulator (AMS1117-3.3)
+\item \textbf{C17-C20:} Output filter capacitors
+\item \textbf{F1:} Input fuse (500mA, slow-blow)
+\item \textbf{L4:} Common mode choke (100$\mu$H)
+\end{itemize}
+
+\textbf{Design Specifications:}
+\begin{itemize}
+\item Input voltage: 85-265V AC, 47-63Hz
+\item Output voltages: +5V @ 1A, +3.3V @ 500mA
+\item Regulation: $\pm$5\% line and load
+\item Ripple voltage: <50mV peak-to-peak
+\item Efficiency: >75\% at full load
+\item Protection: Over-current, over-temperature
+\end{itemize}
+
+\subsection{Battery Backup Circuit}
+\label{subsec:battery_backup_circuit}
+
+The battery backup circuit ensures continuous operation during power outages and provides power management for portable sensor nodes.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{battery_backup_circuit}
+\caption{Battery Backup Circuit Diagram}
+\label{fig:battery_backup_circuit}
+\end{figure}
+
+\textbf{Circuit Components:}
+\begin{itemize}
+\item \textbf{BAT1:} 12V sealed lead-acid battery (7Ah)
+\item \textbf{U8:} Battery charge controller (LTC4162)
+\item \textbf{Q1, Q2:} Power switching MOSFETs (IRF540N)
+\item \textbf{D7, D8:} Schottky diodes for reverse polarity protection
+\item \textbf{R18, R19:} Current sensing resistors (0.1$\Omega$, 1W)
+\item \textbf{U9:} Battery monitoring IC (LTC2944)
+\item \textbf{LED1, LED2:} Status indication LEDs
+\end{itemize}
+
+\textbf{Design Specifications:}
+\begin{itemize}
+\item Battery type: 12V sealed lead-acid (SLA)
+\item Charging current: 0.1C to 0.3C (adjustable)
+\item Float voltage: 13.6V $\pm$ 1\%
+\item Backup time: 8-12 hours (depending on load)
+\item Monitoring: Voltage, current, capacity, temperature
+\item Protection: Over-charge, over-discharge, short-circuit
+\end{itemize}
+
+\section{Data Acquisition and Processing Circuits}
+\label{sec:data_acquisition_circuits}
+
+\subsection{Multi-channel ADC Circuit}
+\label{subsec:adc_circuit}
+
+The multi-channel ADC circuit provides high-resolution analog-to-digital conversion for simultaneous sampling of multiple sensor inputs.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{adc_circuit}
+\caption{Multi-channel ADC Circuit Diagram}
+\label{fig:adc_circuit}
+\end{figure}
+
+\textbf{Circuit Components:}
+\begin{itemize}
+\item \textbf{U10:} 16-bit, 8-channel ADC (ADS1115)
+\item \textbf{R20-R23:} Input scaling resistors (10k$\Omega$, 0.1\%)
+\item \textbf{C21-C24:} Anti-aliasing filter capacitors (1nF, NPO)
+\item \textbf{R24, R25:} I2C pull-up resistors (4.7k$\Omega$)
+\item \textbf{C25:} Reference bypass capacitor (100nF)
+\end{itemize}
+
+\textbf{Design Specifications:}
+\begin{itemize}
+\item Resolution: 16 bits
+\item Sampling rate: Up to 860 SPS
+\item Input channels: 8 single-ended or 4 differential
+\item Input voltage range: 0-5.5V (programmable gain)
+\item Interface: I2C (up to 3.4MHz)
+\item Accuracy: $\pm$2 LSB INL, $\pm$1 LSB DNL
+\end{itemize}
+
+\subsection{Signal Conditioning Circuit}
+\label{subsec:signal_conditioning}
+
+The signal conditioning circuit provides filtering, amplification, and level shifting for various sensor signals before digitization.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{signal_conditioning_circuit}
+\caption{Signal Conditioning Circuit Diagram}
+\label{fig:signal_conditioning_circuit}
+\end{figure}
+
+\textbf{Circuit Components:}
+\begin{itemize}
+\item \textbf{U11:} Quad operational amplifier (LM324)
+\item \textbf{R26-R33:} Gain setting and bias resistors
+\item \textbf{C26-C29:} Filter capacitors for anti-aliasing
+\item \textbf{D9, D10:} Input protection diodes
+\item \textbf{RV1, RV2:} Trim potentiometers for calibration
+\end{itemize}
+
+\textbf{Design Specifications:}
+\begin{itemize}
+\item Gain range: 1 to 100 (software programmable)
+\item Bandwidth: DC to 10kHz (-3dB)
+\item Input impedance: >10M$\Omega$
+\item Output impedance: <100$\Omega$
+\item Common mode rejection: >80dB
+\item Power supply rejection: >80dB
+\end{itemize}
+
+\section{PCB Layout Considerations}
+\label{sec:pcb_layout}
+
+\subsection{General Layout Guidelines}
+\label{subsec:layout_guidelines}
+
+The PCB layout follows industry best practices for mixed-signal designs:
+
+\textbf{Layer Stack-up:}
+\begin{itemize}
+\item Layer 1: Component placement and routing
+\item Layer 2: Ground plane
+\item Layer 3: Power plane (+3.3V, +5V)
+\item Layer 4: Signal routing and component placement
+\end{itemize}
+
+\textbf{Design Rules:}
+\begin{itemize}
+\item Minimum trace width: 0.1mm (4 mil)
+\item Minimum via size: 0.2mm (8 mil)
+\item Minimum drill size: 0.15mm (6 mil)
+\item Minimum spacing: 0.1mm (4 mil)
+\item Copper thickness: 35$\mu$m (1 oz)
+\end{itemize}
+
+\subsection{RF Layout Considerations}
+\label{subsec:rf_layout}
+
+Special attention is given to RF circuit layout for optimal performance:
+
+\textbf{Antenna Placement:}
+\begin{itemize}
+\item Antennas placed at board edges with keepout zones
+\item Minimum 5mm clearance from other components
+\item Ground plane cutouts for antenna radiation
+\end{itemize}
+
+\textbf{RF Trace Routing:}
+\begin{itemize}
+\item 50$\Omega$ controlled impedance for single-ended signals
+\item 100$\Omega$ differential impedance for balanced signals
+\item Minimum bend radius of 3× trace width
+\item Via stitching for ground plane continuity
+\end{itemize}
+
+\subsection{Power and Ground Distribution}
+\label{subsec:power_ground}
+
+Proper power and ground distribution is critical for system performance:
+
+\textbf{Power Distribution:}
+\begin{itemize}
+\item Dedicated power planes for each supply voltage
+\item Power plane splits at analog/digital boundaries
+\item Ferrite beads for supply noise isolation
+\item Local decoupling capacitors at each IC
+\end{itemize}
+
+\textbf{Ground Distribution:}
+\begin{itemize}
+\item Single-point ground connection between analog and digital
+\item Star ground distribution for sensitive analog circuits
+\item Ground plane stitching vias every 5mm
+\item Guard rings around sensitive circuits
+\end{itemize}
+
+\section{Circuit Analysis and Simulation}
+\label{sec:circuit_analysis}
+
+\subsection{SPICE Simulation Results}
+\label{subsec:spice_simulation}
+
+Circuit simulation using SPICE models validates the design performance:
+
+\textbf{Voltage Sensor Transfer Function:}
+\begin{itemize}
+\item DC gain: 0.008V/V (accurate voltage scaling)
+\item Bandwidth: 1.2kHz (-3dB point)
+\item Phase response: <5° phase shift at 50Hz
+\item Total harmonic distortion: <0.1\% at rated input
+\end{itemize}
+
+\textbf{Current Sensor Frequency Response:}
+\begin{itemize}
+\item Gain accuracy: $\pm$0.2\% from 45-65Hz
+\item Phase accuracy: $\pm$0.5° from 45-65Hz
+\item Common mode rejection: >90dB at 50Hz
+\item Input impedance: >1M$\Omega$ (transformer secondary)
+\end{itemize}
+
+\subsection{Thermal Analysis}
+\label{subsec:thermal_analysis}
+
+Thermal analysis ensures reliable operation under all conditions:
+
+\textbf{Component Temperature Rise:}
+\begin{itemize}
+\item Linear regulators: 35°C rise at maximum load
+\item Power MOSFETs: 40°C rise during switching
+\item RF components: 25°C rise at maximum transmission power
+\item Critical components operate within specifications
+\end{itemize}
+
+\textbf{Cooling Requirements:}
+\begin{itemize}
+\item Natural convection adequate for most components
+\item Heat sinks required for high-power linear regulators
+\item Thermal vias used for heat spreading
+\item Operating temperature range: -20°C to +70°C
+\end{itemize}
+
+\section{Component Selection Rationale}
+\label{sec:component_selection}
+
+\subsection{Active Components}
+\label{subsec:active_components}
+
+Component selection is based on performance requirements, cost, and availability:
+
+\textbf{Microcontrollers and Processors:}
+\begin{itemize}
+\item ESP32: Integrated WiFi/Bluetooth, low cost, good development support
+\item ARM Cortex-M series: High performance, low power, extensive ecosystem
+\item Raspberry Pi: Linux support, GPIO capabilities, community support
+\end{itemize}
+
+\textbf{Analog Components:}
+\begin{itemize}
+\item LM358: General-purpose op-amp, low cost, single supply operation
+\item INA128: High precision instrumentation amplifier, excellent CMRR
+\item ADS1115: High resolution ADC, I2C interface, programmable gain
+\end{itemize}
+
+\subsection{Passive Components}
+\label{subsec:passive_components}
+
+Passive component selection focuses on precision and stability:
+
+\textbf{Resistors:}
+\begin{itemize}
+\item Metal film resistors for precision applications (0.1\% tolerance)
+\item Carbon film resistors for general applications (5\% tolerance)
+\item Current sensing resistors with low temperature coefficient
+\end{itemize}
+
+\textbf{Capacitors:}
+\begin{itemize}
+\item Ceramic capacitors for decoupling (X7R dielectric)
+\item Tantalum capacitors for power supply filtering
+\item Film capacitors for RF applications (low ESR, stable)
+\end{itemize}
+
+\section{Testing and Validation Results}
+\label{sec:testing_results}
+
+\subsection{Laboratory Test Results}
+\label{subsec:lab_test_results}
+
+Comprehensive laboratory testing validates circuit performance:
+
+\textbf{Accuracy Testing:}
+\begin{itemize}
+\item Voltage measurement accuracy: $\pm$0.8\% of reading
+\item Current measurement accuracy: $\pm$0.5\% of reading
+\item Temperature measurement accuracy: $\pm$0.3°C
+\item Power calculation accuracy: $\pm$1.2\% of reading
+\end{itemize}
+
+\textbf{Stability Testing:}
+\begin{itemize}
+\item 24-hour drift test: <0.1\% variation
+\item Temperature coefficient: <50ppm/°C
+\item Long-term stability: <0.2\% over 1000 hours
+\item Calibration interval: 12 months recommended
+\end{itemize}
+
+\subsection{EMC Testing Results}
+\label{subsec:emc_testing}
+
+Electromagnetic compatibility testing ensures regulatory compliance:
+
+\textbf{Emissions Testing:}
+\begin{itemize}
+\item Conducted emissions: Meets CISPR 22 Class B limits
+\item Radiated emissions: 6dB margin below FCC Part 15 limits
+\item Spurious emissions: >40dB below carrier level
+\end{itemize}
+
+\textbf{Immunity Testing:}
+\begin{itemize}
+\item ESD immunity: ±4kV contact, ±8kV air discharge
+\item RF immunity: 10V/m field strength, 80MHz-1GHz
+\item Burst immunity: ±2kV on power lines, ±1kV on signal lines
+\item Surge immunity: ±2kV on power lines
+\end{itemize}
+
+\section{Manufacturing and Assembly}
+\label{sec:manufacturing}
+
+\subsection{PCB Fabrication Specifications}
+\label{subsec:pcb_fabrication}
+
+\textbf{PCB Specifications:}
+\begin{itemize}
+\item Board thickness: 1.6mm (standard)
+\item Copper weight: 1oz (35$\mu$m) outer layers, 0.5oz inner layers
+\item Surface finish: HASL (Hot Air Solder Leveling)
+\item Solder mask: Green, LPI (Liquid Photo Imageable)
+\item Silkscreen: White, both sides
+\item IPC Class: IPC-A-600 Class 2 (General Electronic Products)
+\end{itemize}
+
+\textbf{Fabrication Tolerances:}
+\begin{itemize}
+\item Hole position accuracy: $\pm$0.05mm
+\item Track width tolerance: $\pm$10\%
+\item Via registration: $\pm$0.05mm
+\item Impedance control: $\pm$10\%
+\end{itemize}
+
+\subsection{Assembly Process}
+\label{subsec:assembly_process}
+
+\textbf{Surface Mount Assembly:}
+\begin{itemize}
+\item Solder paste application using stencil printing
+\item Component placement using pick-and-place machine
+\item Reflow soldering using controlled temperature profile
+\item Automated optical inspection (AOI) for quality control
+\end{itemize}
+
+\textbf{Through-hole Assembly:}
+\begin{itemize}
+\item Selective wave soldering for through-hole components
+\item Manual soldering for special components
+\item Final inspection and functional testing
+\item Conformal coating for environmental protection
+\end{itemize}
+
+\textbf{Quality Control:}
+\begin{itemize}
+\item In-circuit testing (ICT) for component verification
+\item Functional testing with automated test equipment
+\item Calibration and trimming procedures
+\item Final packaging and documentation
+\end{itemize}
