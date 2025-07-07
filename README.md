@@ -15,7 +15,6 @@ A professional, feature-rich LaTeX template for undergraduate and postgraduate t
 - 👥 **Multi-student support** (1-3 students for UG, 1 for PG) with automatic conditional rendering
 - 🖼️ **Integrated photo handling** for author biographies with wrapfigure layout
 - 🎨 **Customizable headers, footers, and title pages**
-- 🏛️ **Background logo support** for certificate pages
 - 📝 **Justified text without hyphenation** for clean appearance
 - 💻 **MATLAB code highlighting** via mcode.sty package
 - 🔧 **Comprehensive error handling** and wrapper commands
