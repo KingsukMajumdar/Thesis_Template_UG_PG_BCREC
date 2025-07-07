@@ -11,7 +11,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{ugthesis}[2025/07/05 UG Thesis Class for Dr. B. C. Roy Engineering College - Version 3.0]
+\ProvidesClass{thesis}[2025/07/05 UG Thesis Class for Dr. B. C. Roy Engineering College - Version 3.0]
 
 % Base class with improved options
 \LoadClass[a4paper,12pt,twoside,openright,final]{book}
