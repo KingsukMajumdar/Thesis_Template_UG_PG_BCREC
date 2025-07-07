@@ -7,8 +7,8 @@
 
 A professional, feature-rich LaTeX template for undergraduate and postgraduate thesis at **Dr. B. C. Roy Engineering College, Durgapur**. This template provides automated formatting, multi-student support, and institutional compliance while maintaining academic presentation standards.
 
----With Regards
-Kingsuk majumdar, PhD(EE)---
+With Regards
+Kingsuk majumdar, PhD(EE)
 ---
 
 ## 🌟 Key Features
