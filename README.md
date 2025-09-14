@@ -2,8 +2,9 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![LaTeX](https://img.shields.io/badge/LaTeX-008080?style=flat&logo=latex&logoColor=white)](https://www.latex-project.org/)
-[![Version](https://img.shields.io/badge/Version-V3.0-blue.svg)](https://github.com/KingsukMajumdar/Thesis_Template_UG_PG_BCREC)
+[![Version](https://img.shields.io/badge/Version-V4.0-blue.svg)](https://github.com/KingsukMajumdar/Thesis_Template_UG_PG_BCREC)
 [![Overleaf](https://img.shields.io/badge/Overleaf-47A141?style=flat&logo=overleaf&logoColor=white)](https://www.overleaf.com/)
+[![YouTube](https://img.shields.io/badge/YouTube-FFFFFF?style=flat&logo=YouTube&logoColor=red)](https://www.youtube.com/@LearnWithKingsuk)
 
 A professional, feature-rich LaTeX template for undergraduate and postgraduate thesis at **Dr. B. C. Roy Engineering College, Durgapur**. This template provides automated formatting, multi-student support, and institutional compliance while maintaining academic presentation standards.
 
@@ -361,10 +362,10 @@ When reporting issues, please include:
 
 ## 📈 Version History
 
+- **V4.0** (2025-09-14): College logo updated and certificate page space adjustment
 - **V3.0** (2025-07-07): Enhanced with global variables and improved structure
 - **V2.0** (2025-07-05): Added multi-student support and conditional rendering
 - **V1.0** (2025-07-01): Initial release with basic functionality
-
 ---
 
 <div align="center">
