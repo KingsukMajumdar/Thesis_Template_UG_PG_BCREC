@@ -69,7 +69,10 @@ Place: \underline{\hspace{3cm}} \hspace{2cm} Date: \underline{\hspace{3cm}}
 \end{flushleft}
 \vspace{0.3cm}
 \fi
-
+% Space adjustment 
+\ifnum\GetHasCoSupervisor =1 \relax
+\vspace{1.8cm}
+\fi
 % Supervisor and HoD section - side by side layout
 \begin{minipage}[t]{0.47\textwidth}
 \begin{flushleft}
