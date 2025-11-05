@@ -376,4 +376,7 @@ When reporting issues, please include:
 
 *Made with ❤️ for students of Dr. B. C. Roy Engineering College*
 
+
+[![GitHub followers](https://img.shields.io/github/followers/KingsukMajumdar?style=social)](https://github.com/KingsukMajumdar)
+[![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCo2Rho6ypq7IkxaKwByWQRA?style=social)](https://youtube.com/@LearnWithKingsuk)
 </div>
