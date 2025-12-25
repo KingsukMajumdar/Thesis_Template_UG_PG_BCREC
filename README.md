@@ -10,6 +10,8 @@
 
 A professional, feature-rich LaTeX template for undergraduate and postgraduate thesis at **Dr. B. C. Roy Engineering College, Durgapur**. This template provides automated formatting, multi-student support, and institutional compliance while maintaining academic presentation standards.
 
+Note: 7th Sem PWEE781 implementation sample has been added [📄 Instruction](./Thesis_Template_BCREC_KM/7thSemSample)
+
 With Regards
 Kingsuk Majumdar, PhD(EE)
 ---
@@ -363,7 +365,7 @@ When reporting issues, please include:
 ---
 
 ## 📈 Version History
-
+- **V4.0** (2025-09-14): 7th Sem PWEE781 implementation sample has been added [📄 Instruction](./Thesis_Template_BCREC_KM/7thSemSample)
 - **V4.0** (2025-09-14): College logo updated and certificate page space adjustment
 - **V3.0** (2025-07-07): Enhanced with global variables and improved structure
 - **V2.0** (2025-07-05): Added multi-student support and conditional rendering
