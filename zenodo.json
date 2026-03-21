@@ -1,0 +1,49 @@
+{
+  "title": "Thesis_Template_UG_PG_BCREC: Professional LaTeX Thesis and Project Report Template for BCREC (UG/PG)",
+  "description": "A professional LaTeX thesis and project report template tailored for undergraduate (B.Tech) and postgraduate (M.Tech) students of Dr. B. C. Roy Engineering College (BCREC), Durgapur, affiliated with Maulana Abul Kalam Azad University of Technology (MAKAUT), West Bengal, India. The template ensures institutional compliance with BCREC and MAKAUT formatting guidelines, supports consistent academic presentation, and is maintained by a faculty member of the Department of Electrical Engineering, BCREC. Designed for compilation with LuaLaTeX using latexmk.",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "MIT",
+  "creators": [
+    {
+      "name": "Majumdar, Kingsuk",
+      "affiliation": "Department of Electrical Engineering, Dr. B. C. Roy Engineering College, Durgapur, West Bengal, India",
+      "orcid": "0000-0001-7224-4862"
+    }
+  ],
+  "keywords": [
+    "LaTeX",
+    "thesis template",
+    "BCREC",
+    "MAKAUT",
+    "LuaLaTeX",
+    "academic writing",
+    "M.Tech thesis",
+    "B.Tech thesis",
+    "project report",
+    "electrical engineering",
+    "West Bengal",
+    "India",
+    "latexmk"
+  ],
+  "language": "eng",
+  "notes": "This template is maintained by Dr. Kingsuk Majumdar, Assistant Professor, Department of Electrical Engineering, Dr. B. C. Roy Engineering College, Durgapur. Compiled and tested with LuaLaTeX (latexmk -lualatex). Intended for students of BCREC affiliated to MAKAUT, West Bengal.",
+  "related_identifiers": [
+    {
+      "scheme": "url",
+      "identifier": "https://github.com/KingsukMajumdar/Thesis_Template_UG_PG_BCREC",
+      "relation": "isSupplementTo"
+    },
+    {
+      "scheme": "url",
+      "identifier": "https://github.com/KingsukMajumdar/NITDGP-Thesis-Template-Unofficial",
+      "relation": "isRelatedTo"
+    }
+  ],
+  "version": "1.0.0",
+  "communities": [
+    {
+      "identifier": "zenodo"
+    }
+  ]
+}
