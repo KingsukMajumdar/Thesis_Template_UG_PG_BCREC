@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use this template for your thesis/project report, please cite it as below."
 title: "Thesis_Template_UG_PG_BCREC: Professional LaTeX Thesis and Project Report Template for BCREC (UG/PG)"
-version: "1.0.0"
-date-released: "2025-01-01"
+version: "4.1.0"
+date-released: "2026-03-22"
 abstract: >
   A professional LaTeX thesis and project report template tailored for undergraduate (B.Tech)
   and postgraduate (M.Tech) students of Dr. B. C. Roy Engineering College (BCREC), Durgapur,
@@ -19,6 +19,7 @@ authors:
     alias: "KingsukMajumdar"
 type: software
 license: MIT
+doi: "10.5281/zenodo.19153458"
 repository-code: "https://github.com/KingsukMajumdar/Thesis_Template_UG_PG_BCREC"
 url: "https://github.com/KingsukMajumdar/Thesis_Template_UG_PG_BCREC"
 keywords:
@@ -48,6 +49,7 @@ preferred-citation:
     - family-names: "Majumdar"
       given-names: "Kingsuk"
       orcid: "https://orcid.org/0000-0001-7224-4862"
-  year: 2025
+  year: 2026
   license: MIT
+  doi: "10.5281/zenodo.19153458"
   repository-code: "https://github.com/KingsukMajumdar/Thesis_Template_UG_PG_BCREC"
