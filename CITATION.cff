@@ -1,0 +1,53 @@
+cff-version: 1.2.0
+message: "If you use this template for your thesis/project report, please cite it as below."
+title: "Thesis_Template_UG_PG_BCREC: Professional LaTeX Thesis and Project Report Template for BCREC (UG/PG)"
+version: "1.0.0"
+date-released: "2025-01-01"
+abstract: >
+  A professional LaTeX thesis and project report template tailored for undergraduate (B.Tech)
+  and postgraduate (M.Tech) students of Dr. B. C. Roy Engineering College (BCREC), Durgapur,
+  affiliated with Maulana Abul Kalam Azad University of Technology (MAKAUT), West Bengal.
+  The template ensures institutional compliance, consistent formatting, and a streamlined
+  academic writing experience, and is maintained by a faculty member of the Department of
+  Electrical Engineering, BCREC.
+authors:
+  - family-names: "Majumdar"
+    given-names: "Kingsuk"
+    orcid: "https://orcid.org/0000-0001-7224-4862"
+    email: "kingsuk.majumdar@bcrec.ac.in"
+    affiliation: "Department of Electrical Engineering, Dr. B. C. Roy Engineering College, Durgapur, West Bengal, India"
+    alias: "KingsukMajumdar"
+type: software
+license: MIT
+repository-code: "https://github.com/KingsukMajumdar/Thesis_Template_UG_PG_BCREC"
+url: "https://github.com/KingsukMajumdar/Thesis_Template_UG_PG_BCREC"
+keywords:
+  - latex
+  - thesis-template
+  - bcrec
+  - makaut
+  - lualatex
+  - academic-writing
+  - mtech-thesis
+  - btech-thesis
+  - project-report
+  - electrical-engineering
+  - west-bengal
+  - india
+references:
+  - type: software
+    title: "LuaLaTeX"
+    url: "https://www.luatex.org/"
+  - type: software
+    title: "latexmk"
+    url: "https://ctan.org/pkg/latexmk"
+preferred-citation:
+  type: software
+  title: "Thesis_Template_UG_PG_BCREC: Professional LaTeX Thesis and Project Report Template for BCREC (UG/PG)"
+  authors:
+    - family-names: "Majumdar"
+      given-names: "Kingsuk"
+      orcid: "https://orcid.org/0000-0001-7224-4862"
+  year: 2025
+  license: MIT
+  repository-code: "https://github.com/KingsukMajumdar/Thesis_Template_UG_PG_BCREC"
