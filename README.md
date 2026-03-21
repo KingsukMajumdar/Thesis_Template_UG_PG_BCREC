@@ -25,7 +25,7 @@ K. Majumdar, "Thesis_Template_UG_PG_BCREC: Professional LaTeX Thesis and Project
 
 ---
 
-## BibTeX Citation ()
+## BibTeX Citation 
 
 ```bibtex
 @misc{majumdar2026bcrec,
