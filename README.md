@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![LaTeX](https://img.shields.io/badge/LaTeX-008080?style=flat&logo=latex&logoColor=white)](https://www.latex-project.org/)
-[![Version](https://img.shields.io/badge/Version-V4.0-blue.svg)](https://github.com/KingsukMajumdar/Thesis_Template_UG_PG_BCREC)
+[![Version](https://img.shields.io/badge/Version-V4.1-blue.svg)](https://github.com/KingsukMajumdar/Thesis_Template_UG_PG_BCREC)
 [![Overleaf](https://img.shields.io/badge/Overleaf-47A141?style=flat&logo=overleaf&logoColor=white)](https://www.overleaf.com/)
 [![YouTube](https://img.shields.io/badge/YouTube-FFFFFF?style=flat&logo=YouTube&logoColor=red)](https://www.youtube.com/@LearnWithKingsuk)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white)](https://github.com/KingsukMajumdar/Thesis_Template_UG_PG_BCREC)
@@ -14,6 +14,32 @@ Note: 7th Sem PWEE781 implementation sample has been added [📄 Instruction](./
 
 With Regards
 Kingsuk Majumdar, PhD(EE)
+
+# Zenodo DOI Badge & Citation
+```text
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19153458.svg)](https://doi.org/10.5281/zenodo.19153458)
+```
+## IEEE Citation (for users to copy)
+
+K. Majumdar, "Thesis_Template_UG_PG_BCREC: Professional LaTeX Thesis and Project Report Template for BCREC (UG/PG)," version 1.0.0, Zenodo, Mar. 2026. doi: 10.5281/zenodo.19153458. [Online]. Available: https://doi.org/10.5281/zenodo.19153458
+
+---
+
+## BibTeX Citation ()
+
+```bibtex
+@misc{majumdar2026bcrec,
+  author       = {K. Majumdar},
+  title        = {{Thesis\_Template\_UG\_PG\_BCREC: Professional LaTeX
+                   Thesis and Project Report Template for BCREC (UG/PG)}},
+  year         = {2026},
+  month        = mar,
+  version      = {1.0.0},
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.19153458},
+  howpublished = {\url{https://doi.org/10.5281/zenodo.19153458}}
+}
+```
 ---
 
 ## 🌟 Key Features
@@ -365,6 +391,7 @@ When reporting issues, please include:
 ---
 
 ## 📈 Version History
+- **V4.1** (2026-03-22): DoI has been added
 - **V4.0** (2025-12-24): 7th Sem PWEE781 implementation sample has been added [📄 Instruction](./Thesis_Template_BCREC_KM/7thSemSample)
 - **V4.0** (2025-09-14): College logo updated and certificate page space adjustment
 - **V3.0** (2025-07-07): Enhanced with global variables and improved structure
