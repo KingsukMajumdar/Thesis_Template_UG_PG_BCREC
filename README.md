@@ -34,7 +34,7 @@ K. Majumdar, "Thesis_Template_UG_PG_BCREC: Professional LaTeX Thesis and Project
                    Thesis and Project Report Template for BCREC (UG/PG)}},
   year         = {2026},
   month        = mar,
-  version      = {1.0.0},
+  version      = {4.1.0},
   publisher    = {Zenodo},
   doi          = {10.5281/zenodo.19153458},
   howpublished = {\url{https://doi.org/10.5281/zenodo.19153458}}
