@@ -21,7 +21,7 @@ Kingsuk Majumdar, PhD(EE)
 ```
 ## IEEE Citation (for users to copy)
 
-K. Majumdar, "Thesis_Template_UG_PG_BCREC: Professional LaTeX Thesis and Project Report Template for BCREC (UG/PG)," version 1.0.0, Zenodo, Mar. 2026. doi: 10.5281/zenodo.19153458. [Online]. Available: https://doi.org/10.5281/zenodo.19153458
+K. Majumdar, "Thesis_Template_UG_PG_BCREC: Professional LaTeX Thesis and Project Report Template for BCREC (UG/PG)," version 4.1.0, Zenodo, Mar. 2026. doi: 10.5281/zenodo.19153458. [Online]. Available: https://doi.org/10.5281/zenodo.19153458
 
 ---
 
