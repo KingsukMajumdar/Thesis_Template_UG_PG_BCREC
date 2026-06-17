@@ -375,7 +375,7 @@ When reporting issues, please include:
 | Platform             | Link                                                                          | Description            |
 | -------------------- | ----------------------------------------------------------------------------- | ---------------------- |
 | 🐙 **GitHub**        | [Source Code](https://github.com/KingsukMajumdar/Thesis_Template_UG_PG_BCREC) | Source code and issues |
-| 📝 **Overleaf**      | [Overleaf template link will be added here]                                   | Online template        |
+| 📝 **Overleaf**      | [Overleaf template link will be added here](https://www.overleaf.com/read/srcbqvzbhtvp#ff82f4)                                   | Online template        |
 | 📚 **Documentation** | [Wiki/Docs]                                                                   | Detailed documentation |
 | 🏫 **Institution**   | [BCREC Website](http://www.bcrec.ac.in/)                                      | College website        |
 
