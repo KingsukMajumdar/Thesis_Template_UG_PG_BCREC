@@ -400,12 +400,11 @@ When reporting issues, please include:
 ---
 
 <div align="center">
-
-**⭐ Star this repository if it helped you! ⭐**
-
-*Made with ❤️ for students of Dr. B. C. Roy Engineering College*
-
-
-[![GitHub followers](https://img.shields.io/github/followers/KingsukMajumdar?style=social)](https://github.com/KingsukMajumdar)
-[![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCo2Rho6ypq7IkxaKwByWQRA?style=social)](https://youtube.com/@LearnWithKingsuk)
+  <a href="https://github.com/KingsukMajumdar">
+    <img src="https://img.shields.io/github/followers/KingsukMajumdar?style=social" alt="GitHub followers"/>
+  </a>
+  &nbsp;
+  <a href="https://youtube.com/@LearnWithKingsuk">
+    <img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fshieldcn.dev%2Fyoutube%2Fsubscribers%2FUCo2Rho6ypq7IkxaKwByWQRA%2Fshields.json&style=social&logo=youtube&logoColor=red&label=YouTube" alt="YouTube Channel Subscribers"/>
+  </a>
 </div>
