@@ -7,6 +7,7 @@ Every step in the main part of this guide uses mouse and menus only (GUI). Users
 With Regards
 Kingsuk Majumdar, PhD(EE)
 
+See Youtube video instruction: [https://youtu.be/69AVjcXEP_A](https://youtu.be/69AVjcXEP_A)
 ---
 
 ## 📋 Why compile on your own PC
