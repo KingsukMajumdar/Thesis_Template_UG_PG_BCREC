@@ -17,29 +17,144 @@ Overleaf's free plan throttles compile time and queues long documents. A thesis 
 
 `thesis.cls` pulls in roughly 40 packages on top of the base `book` class. Three deserve special attention because a generic "install LaTeX" tutorial will not mention them:
 
-1. **`fourier`** — needs the Adobe Utopia / Type 1 font set, not part of a minimal TeX install.
-2. **`algorithm2e` (with `algcompatible`) loaded alongside `algorithmicx`/`algpseudocode`/`algorithm`** — two competing algorithm-typesetting families in the same class file. Both are present because different chapters historically used different syntax. Keep this in mind if you ever see a `\algorithmic already defined`-type error; see the Troubleshooting table.
-3. **`mcode.sty`** — the MATLAB code-highlighting package by Florian Knorn. It is **not distributed through TeX Live or CTAN**; it ships inside this template's repository itself. If it is missing from your working folder, no distro package will fix it.
+1. **`fourier`**: needs the Adobe Utopia / Type 1 font set, not part of a minimal TeX install.
+2. **`algorithm2e` (with `algcompatible`) loaded alongside `algorithmicx`/`algpseudocode`/`algorithm`**: two competing algorithm-typesetting families in the same class file. Both are present because different chapters historically used different syntax. Keep this in mind if you ever see a `\algorithmic already defined`-type error; see the Troubleshooting table.
+3. **`mcode.sty`**: the MATLAB code-highlighting package by Florian Knorn. It is **not distributed through TeX Live or CTAN**; it ships inside this template's repository itself. If it is missing from your working folder, no distro package will fix it. Section 1.7 explains how to add it.
 
 ---
 
 ## 🐧 1. Linux
 
-### 📦 Prerequisites checklist (all distros)
+### 📥 1.1 Downloading the repository
+
+Repository link:
+
+```text
+https://github.com/KingsukMajumdar/Thesis_Template_UG_PG_BCREC
+```
+
+Choose any one of the three options below.
+
+**Option A: `git clone` (recommended)**
+
+This keeps the folder linked to GitHub. Later updates of the template come with a single `git pull`.
+
+```bash
+# Install git (if not already present)
+sudo pacman -S git        # Arch / Manjaro
+sudo apt install git      # Ubuntu / Debian
+sudo dnf install git      # Fedora
+
+# Clone the repository
+cd ~/Documents
+git clone https://github.com/KingsukMajumdar/Thesis_Template_UG_PG_BCREC.git
+cd Thesis_Template_UG_PG_BCREC
+```
+
+To fetch later updates of the template:
+
+```bash
+cd ~/Documents/Thesis_Template_UG_PG_BCREC
+git pull
+```
+
+> 💡 **Tip:** Keep the cloned folder as a clean reference copy. Write your own thesis in a separate copy, so a later `git pull` never clashes with your chapters:
+>
+> ```bash
+> cp -r ~/Documents/Thesis_Template_UG_PG_BCREC ~/Documents/My_Thesis
+> ```
+
+**Option B: Download ZIP from the browser**
+
+1. Open the repository link in any browser.
+2. Click the green **`<> Code`** button.
+3. Click **Download ZIP**.
+4. The file lands in `~/Downloads` as `Thesis_Template_UG_PG_BCREC-main.zip`.
+
+**Option C: Download ZIP from the terminal**
+
+```bash
+cd ~/Downloads
+wget https://github.com/KingsukMajumdar/Thesis_Template_UG_PG_BCREC/archive/refs/heads/main.zip \
+     -O Thesis_Template_UG_PG_BCREC-main.zip
+```
+
+`curl` works equally well:
+
+```bash
+curl -L -o Thesis_Template_UG_PG_BCREC-main.zip \
+     https://github.com/KingsukMajumdar/Thesis_Template_UG_PG_BCREC/archive/refs/heads/main.zip
+```
+
+> 📌 **Note:** If the default branch of the repository is `master` instead of `main`, replace `main` with `master` in the URL and in the file name.
+
+---
+
+### 🗜️ 1.2 Unzipping the repository
+
+Skip this step if you used `git clone` (Option A).
+
+**Terminal route:**
+
+```bash
+# Install unzip (if not already present)
+sudo pacman -S unzip      # Arch / Manjaro
+sudo apt install unzip    # Ubuntu / Debian
+sudo dnf install unzip    # Fedora
+
+# Extract into ~/Documents
+cd ~/Downloads
+unzip Thesis_Template_UG_PG_BCREC-main.zip -d ~/Documents/
+cd ~/Documents/Thesis_Template_UG_PG_BCREC-main
+```
+
+Optionally rename the folder to something shorter:
+
+```bash
+mv ~/Documents/Thesis_Template_UG_PG_BCREC-main ~/Documents/My_Thesis
+cd ~/Documents/My_Thesis
+```
+
+**GUI route (KDE Plasma / Dolphin):**
+
+Right-click the ZIP file, then **Extract → Extract archive here**. Ark creates the folder `Thesis_Template_UG_PG_BCREC-main` beside the ZIP file. On GNOME (Nautilus), right-click and choose **Extract Here**.
+
+> ⚠️ **Important:**
+> 1. Avoid spaces and special characters in the folder path (e.g. `My Thesis (final)`). `pdflatex`, `bibtex` and several packages fail on such paths. Use `My_Thesis` instead.
+> 2. Some GUI tools create a nested folder (`Thesis_Template_UG_PG_BCREC-main/Thesis_Template_UG_PG_BCREC-main/`). Always work from the folder that directly holds `main.tex`.
+
+**Locate `main.tex` and check the key files:**
+
+```bash
+find . -maxdepth 3 -name "main.tex"
+```
+
+`cd` into the folder that this command prints, then confirm the four key files sit together:
+
+```bash
+ls -la main.tex thesis.cls mcode.sty references.bib
+```
+
+All four must appear in the same folder. Every command in the remaining sections runs from this folder.
+
+---
+
+### 📦 1.3 Prerequisites checklist (all distros)
 
 | Requirement | Purpose |
 |---|---|
+| `git` or `unzip` | Downloading and extracting the template (Sections 1.1 and 1.2) |
 | TeX Live (2023 or newer) | Core engine + packages |
 | `pdflatex` binary | Compiler specified in `main.tex` |
 | `bibtex` binary | Bibliography engine (`\bibliographystyle{IEEEtran}`) |
 | Ghostscript | Needed by `epstopdf` if any figure is `.eps` |
 | Perl | Required by several TeX Live helper scripts |
 | `latexmk` (recommended, not mandatory) | Automates the pdflatex → bibtex → pdflatex → pdflatex loop |
-| `mcode.sty` present in the project root | Already included in the repo; verify it is not missing after a fresh clone/download |
+| `mcode.sty` present in the project root | Already included in the repo; verify it is not missing after a fresh clone/download (Section 1.7) |
 
 ---
 
-### 🟠 1.1 Ubuntu / Debian-based (apt)
+### 🟠 1.4 Ubuntu / Debian-based (apt)
 
 **Fastest route (recommended for a first-time setup):**
 
@@ -85,7 +200,7 @@ sudo apt install \
 
 ---
 
-### 🔵 1.2 Fedora (dnf)
+### 🔵 1.5 Fedora (dnf)
 
 **Fastest route:**
 
@@ -112,7 +227,7 @@ sudo dnf install \
   perl
 ```
 
-Fedora also packages most individual CTAN packages separately (`texlive-fourier`, `texlive-siunitx`, `texlive-algorithm2e`, `texlive-mcode` does **not** exist for the reason above). If `dnf install <collection-name>` reports "no match," run:
+Fedora also packages most individual CTAN packages separately (`texlive-fourier`, `texlive-siunitx`, `texlive-algorithm2e`; `texlive-mcode` does **not** exist for the reason above). If `dnf install <collection-name>` reports "no match," run:
 
 ```bash
 dnf search texlive- | grep -i <keyword>
@@ -122,7 +237,7 @@ to locate the exact package name for that release, since collection names occasi
 
 ---
 
-### 🟣 1.3 Arch Linux / Manjaro (pacman)
+### 🟣 1.6 Arch Linux / Manjaro (pacman)
 
 Arch restructured its TeX Live packaging; the old single `texlive-most` meta-package no longer exists. The `texlive` group now contains 22 sub-packages.
 
@@ -174,19 +289,102 @@ This is what README.md's original `pacman -S texlive-most texlive-bibtexextra` i
 
 ---
 
-### 📁 1.4 Placing `mcode.sty`
+### 📁 1.7 Adding `mcode.sty` and other local style files
 
-Confirm it is sitting next to `main.tex`:
+`mcode.sty` is not available through any package manager. `thesis.cls` loads it with the options `[framed,numbered,autolinebreaks,useliterate]`. So `pdflatex` must find it on its own search path. `pdflatex` looks for a `.sty` file in this order:
+
+1. The current folder (the folder holding `main.tex`)
+2. The personal TeX tree (`~/texmf`)
+3. The system TeX tree (TeX Live installation)
+
+Choose any one of the three methods below.
+
+**Method 1: Keep it in the project folder (default, recommended)**
+
+The repository already places `mcode.sty` beside `main.tex`. Confirm it:
 
 ```bash
-ls mcode.sty
+ls -la mcode.sty
 ```
 
-If it is missing (e.g. you only downloaded the `.tex`/`.cls` files and not the full repo), pull it from the same GitHub repository (`Thesis_Template_UG_PG_BCREC`), or from the original MATLAB File Exchange listing by Florian Knorn (BSD license, as credited in `README.md` and `LICENSE`). Do not substitute `matlab-prettifier`, a different CTAN package with a different command set; `thesis.cls` calls `mcode` with `[framed,numbered,autolinebreaks,useliterate]`, options specific to Knorn's package.
+If the file is missing, recover it as follows.
+
+*From a git clone (file deleted by mistake):*
+
+```bash
+git checkout -- mcode.sty
+```
+
+*From another copy of the repository:*
+
+```bash
+find ~/Documents/Thesis_Template_UG_PG_BCREC -name "mcode.sty"
+cp <path_printed_above>/mcode.sty ./
+```
+
+*From the browser:* open `mcode.sty` inside the repository on GitHub, click the **Download raw file** icon (top right of the file view), then move the file beside `main.tex`:
+
+```bash
+mv ~/Downloads/mcode.sty ~/Documents/My_Thesis/
+```
+
+**Method 2: Install once in the personal TeX tree (all your projects)**
+
+Useful when you maintain several theses or reports with MATLAB listings. Install it once, and every project on your account finds it.
+
+```bash
+mkdir -p ~/texmf/tex/latex/mcode
+cp mcode.sty ~/texmf/tex/latex/mcode/
+texhash ~/texmf
+```
+
+Verify from **outside** the project folder (otherwise `kpsewhich` simply finds the local copy):
+
+```bash
+cd ~
+kpsewhich mcode.sty
+```
+
+Expected output: `/home/<username>/texmf/tex/latex/mcode/mcode.sty`
+
+If nothing prints, check the personal tree location on your system:
+
+```bash
+kpsewhich -var-value TEXMFHOME
+```
+
+and copy the file under `<that_path>/tex/latex/mcode/` instead.
+
+**Method 3: Install system-wide (all users, e.g. lab or shared machines)**
+
+```bash
+LOCAL=$(kpsewhich -var-value TEXMFLOCAL)
+sudo mkdir -p "$LOCAL/tex/latex/mcode"
+sudo cp mcode.sty "$LOCAL/tex/latex/mcode/"
+sudo mktexlsr "$LOCAL"
+kpsewhich mcode.sty
+```
+
+**The same rule applies to other local files**
+
+Any `.sty`, `.cls` or `.bst` file that is not on CTAN follows the same three methods. For Method 2, use the matching folder:
+
+| File type | Folder inside `~/texmf` | Refresh command |
+|---|---|---|
+| `.sty` (style package) | `~/texmf/tex/latex/<name>/` | `texhash ~/texmf` |
+| `.cls` (document class) | `~/texmf/tex/latex/<name>/` | `texhash ~/texmf` |
+| `.bst` (bibliography style) | `~/texmf/bibtex/bst/<name>/` | `texhash ~/texmf` |
+| `.bib` (shared reference database) | `~/texmf/bibtex/bib/<name>/` | `texhash ~/texmf` |
+
+> ⚠️ **Important:**
+> 1. Keep `thesis.cls` in the project folder. It is specific to this template and you may edit it (margins, title page, headers). A copy in `~/texmf` gets silently overridden by the project-folder copy, which causes confusion during debugging.
+> 2. If two copies of `mcode.sty` exist (project folder and `~/texmf`), the project-folder copy wins. Keep only one copy to avoid version mismatch.
+> 3. Do not substitute `matlab-prettifier`. It is a different CTAN package with a different command set, and the options used in `thesis.cls` are specific to Knorn's `mcode`.
+> 4. `mcode.sty` is BSD-licensed (credited in `README.md` and `LICENSE`). Keep its licence header intact when copying it anywhere.
 
 ---
 
-### ✅ 1.5 Verifying the install
+### ✅ 1.8 Verifying the install
 
 ```bash
 pdflatex --version
@@ -199,20 +397,21 @@ kpsewhich IEEEtran.bst
 
 Each `kpsewhich` call should print a path. An empty line means that package is still missing; re-check the tables above for which distro package provides it.
 
-For `mcode.sty`, since it lives in the project folder rather than the TeX Live tree:
+For `mcode.sty`, run this from the project folder (Method 1) or from `~` (Methods 2 and 3):
 
 ```bash
-ls -la mcode.sty
+ls -la mcode.sty          # Method 1
+kpsewhich mcode.sty       # Methods 2 and 3
 ```
 
 ---
 
-### ⚡ 1.6 Compiling
+### ⚡ 1.9 Compiling
 
 **Manual sequence** (same as README.md, given here for completeness):
 
 ```bash
-cd /path/to/ug-thesis-template/
+cd ~/Documents/Thesis_Template_UG_PG_BCREC    # or the folder that holds main.tex
 mkdir -p OUTPUT
 pdflatex main.tex
 bibtex main
@@ -238,7 +437,7 @@ latexmk -pdf -pvc -output-directory=OUTPUT main.tex
 
 ---
 
-### 🖥️ 1.7 Optional: VS Code offline setup
+### 🖥️ 1.10 Optional: VS Code offline setup
 
 Since the compile itself needs the LaTeX Workshop extension talking to the local `pdflatex`/`bibtex`/`latexmk` binaries installed above, not Overleaf, add this to `.vscode/settings.json` in the project folder:
 
@@ -276,12 +475,13 @@ This keeps generated files inside `OUTPUT/`, matching the directory layout in `R
 
 ---
 
-### 🛠️ 1.8 Troubleshooting
+### 🛠️ 1.11 Troubleshooting
 
 | Symptom | Likely cause | Fix |
 |---|---|---|
 | `File 'fourier.sty' not found` | Missing font-extra collection | Install `texlive-fonts-extra` (apt) / `texlive-collection-fontsextra` (dnf) / `texlive-fontsextra` (pacman) |
-| `File 'mcode.sty' not found` | File not copied from repo, or wrong directory | Confirm it sits beside `main.tex`; do not swap in `matlab-prettifier` |
+| `File 'mcode.sty' not found` | File not copied from repo, or wrong directory | Follow Section 1.7; do not swap in `matlab-prettifier` |
+| `File 'thesis.cls' not found` | Compiling from the wrong folder, or nested folder after unzip | `cd` into the folder that directly holds `main.tex` (Section 1.2) |
 | `Command \algorithmic already defined` or similar algorithm-package clash | `algorithm2e` and `algorithmicx`/`algpseudocode`/`algorithm` loaded together (thesis.cls lines 89-94) | This is a known combination in the class file. If your TeX Live build errors on it, temporarily comment out either the `algorithm2e`+`algcompatible` pair or the `algorithm`/`algorithmicx`/`algpseudocode` trio, matching whichever algorithm syntax your chapters actually use |
 | `! LaTeX Error: File 'IEEEtran.bst' not found` | `texlive-publishers` (or equivalent) not installed | Install per the tables above |
 | Figures with `.eps` fail during `pdflatex` | Ghostscript missing, `epstopdf` cannot convert | `sudo apt/dnf/pacman install ghostscript` |
@@ -291,7 +491,7 @@ This keeps generated files inside `OUTPUT/`, matching the directory layout in `R
 
 ---
 
-### 🔍 1.9 Worked example: a required file is missing
+### 🔍 1.12 Worked example: a required file is missing
 
 Two concrete cases, since these are the most common blockers with this class file.
 
