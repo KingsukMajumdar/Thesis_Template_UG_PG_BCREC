@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![LaTeX](https://img.shields.io/badge/LaTeX-008080?style=flat&logo=latex&logoColor=white)](https://www.latex-project.org/)
-[![Version](https://img.shields.io/badge/Version-V4.1-blue.svg)](https://github.com/KingsukMajumdar/Thesis_Template_UG_PG_BCREC)
+[![Version](https://img.shields.io/badge/Version-V4.2-blue.svg)](https://github.com/KingsukMajumdar/Thesis_Template_UG_PG_BCREC)
 [![Overleaf](https://img.shields.io/badge/Overleaf-47A141?style=flat&logo=overleaf&logoColor=white)](https://www.overleaf.com/)
 [![YouTube](https://img.shields.io/badge/YouTube-FFFFFF?style=flat&logo=YouTube&logoColor=red)](https://www.youtube.com/@LearnWithKingsuk)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white)](https://github.com/KingsukMajumdar/Thesis_Template_UG_PG_BCREC)
@@ -10,7 +10,15 @@
 
 A professional, feature-rich LaTeX template for undergraduate and postgraduate thesis at **Dr. B. C. Roy Engineering College, Durgapur**. This template provides automated formatting, multi-student support, and institutional compliance while maintaining academic presentation standards.
 
-Note: 7th Sem PWEE781 implementation sample has been added [📄 Instruction](./Thesis_Template_BCREC_KM/7thSemSample)
+Note: 
+  1. 7th Sem PWEE781 implementation sample has been added [📄 Instruction](./Thesis_Template_BCREC_KM/7thSemSample)
+  2. Offline Installation and Compilation Instructions for Linux and Windows 11 Users
+     
+  | OS  | README Link | Video |
+  |----|------------| --------|
+  | Linux| [Click here](https://github.com/KingsukMajumdar/Thesis_Template_UG_PG_BCREC/blob/main/Offline_Installation_Guide/01_Linux_OFFLINE_COMPILATION_GUIDE.md) |  NA |
+  | Windows 11 | [Click here](https://github.com/KingsukMajumdar/Thesis_Template_UG_PG_BCREC/blob/main/Offline_Installation_Guide/02_Windows11_OFFLINE_COMPILATION_GUIDE.md) | [YouTube](https://youtu.be/69AVjcXEP_A?si=h0fIngXlyL4lW0Uh) |
+  
 
 With Regards
 Kingsuk Majumdar, PhD(EE)
@@ -391,6 +399,7 @@ When reporting issues, please include:
 ---
 
 ## 📈 Version History
+- **V4.2** (2026-10-12): Offline Installation and Compilation Instructions for Linux and Windows 11 Users
 - **V4.1** (2026-03-22): DoI has been added
 - **V4.0** (2025-12-24): 7th Sem PWEE781 implementation sample has been added [📄 Instruction](./Thesis_Template_BCREC_KM/7thSemSample)
 - **V4.0** (2025-09-14): College logo updated and certificate page space adjustment
